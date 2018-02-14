@@ -13,6 +13,9 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{% <---- BEWARE
             \node[shape=circle,draw,inner sep=2pt, color=pumpkin] (char) {#1};}}
 
+% quotes package
+\usepackage[autostyle, maxlevel = 2]{csquotes}
+
 % bibliography package            
 \usepackage[backend = biber, style = numeric]{biblatex}   
 \addbibresource{references.bib}            
@@ -25,11 +28,11 @@
 
 \makeglossaries
 
-% quotes package
-\usepackage{csquotes}
-
 % package for references and links 
 \usepackage{caption}
+
+% package for insertion of pdf pages
+\usepackage{pdfpages}
 
 % pour les images
 \usepackage{graphicx}
@@ -61,7 +64,7 @@
 %% pour dessiner des graphiques et des schemas
 \usepackage{tikz}
 \usepackage{tkz-graph}
-\usetikzlibrary{calc,decorations.pathreplacing}
+\usetikzlibrary{calc, decorations.pathreplacing}
 
 % Pgfplots
 \usepackage{pgfplotstable}
@@ -106,8 +109,6 @@
 
 %% Sets page size and margins
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-
-
 
 %% Pour ecrire des algorithmes
 \usepackage[vlined,ruled,linesnumbered]{algorithm2e}
@@ -162,7 +163,15 @@
 
 %%%%% CHAPITRE "DE LA NOTATION MUSICALE" %%%%%
 \chapter{De la notation musicale}
-	\input{Notation/notation.tex}	
+	\todo{Ajouter une intro pour le chapitre}	
+	
+	\section{Un peu d'histoire}
+	\label{sec:unPeuDHistoire}
+	\input{Notation/unPeuDHistoire.tex}
+	
+	\section{Noter la musique multimédia}
+	\label{sec:noterLaMusiqueMultimedia}
+	\input{Notation/noterLaMusiqueMultimedia.tex}	
 
 %%%%% CONCLUSION %%%%%
 \chapter{Conclusion}
@@ -183,6 +192,7 @@
 \printglossary[title={Glossaire}, toctitle={Glossaire}]
 
 %%%%% ANNEXES %%%%%
+\lhead{} % remove the left part of the header (section name)
 \appendix
 \romanchapter{Annexes}
 \input{Annexes/mainAnnexe.tex}
