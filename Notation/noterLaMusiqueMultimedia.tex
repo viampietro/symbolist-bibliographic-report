@@ -18,13 +18,40 @@ Comme illustration de la musique multimédia, un fragment de la partition de la 
 	\label{fig:schemaInstallationFluoresce}			
 \end{figure}
 \begin{center}
-\small \it Cette figure présente le schéma de câblage des différents éléments qui vont servir à l'exécution de la pièce. La performance fait intervenir un joueur de violoncelle (\textit{Violoncello}); le son produit par le violoncelle est capté et envoyé à un ordinateur (\textit{Client computer}) sur lequel est lancé la station audionumérique\footnote{Une station audionumérique (acronyme DAW, de l'anglais digital audio workstation) désigne une station de travail dédiée à l'audionumérique. C'est un ensemble d'outils électroniques, conçu pour enregistrer, éditer, manipuler, créer et lire des contenus audionumériques. -- Wikipédia} \textit{Ableton Live} associé au plugin \textit{MaxForLive}\footnote{MaxForLive est un plugin permettant l'intégration du logiciel Max/MSP à la station audionumérique Ableton Live. Voir plus loin pour plus de détails sur Max/MSP.}. Ableton Live va répartir le signal audio sur les systèmes WFS et HOA (\textit{Wave Field Synthesis} et \textit{High Order Ambisonics}\footnote{\textit{Wave Field Synthesis} et \textit{High Order Ambisonics} sont deux systèmes de diffusion de sons spatialisés basés sur l'utilisation d'un grand nombre d'enceintes.}) via la liaison MADI\footnote{MADI (Multichannel Audio Digital Interface) est une liaison audionumérique définissant un protocole capable d'embarquer 64 canaux audio simultanément}. Le plugin MaxForLive va s'occuper d'envoyer des messages OSC\footnote{Open Sound Controle. Protocole décrivant des messages sous forme d'urls. \textbf{Voir le chapitre} pour plus de détails.} \texttt{/boids/1}, \texttt{/boids/2} et \texttt{/boids/3} (directives de déclenchement d'effets sonores), via UDP, aux systèmes WFS et HOA. Le schéma de branchement complet est consultable en annexe \ref{sec:schemaInstallationFluoresceComplet} page~\pageref{sec:schemaInstallationFluoresceComplet}.
+\small \it Cette figure présente le schéma de câblage des différents éléments qui vont servir à l'exécution de la pièce. La performance fait intervenir un joueur de violoncelle (\textit{Violoncello}); le son produit par le violoncelle est capté et envoyé à un ordinateur (\textit{Client computer}) sur lequel est lancé la station audionumérique\footnote{Une station audionumérique (acronyme DAW, de l'anglais digital audio workstation) désigne […] un ensemble d'outils électroniques, conçu pour enregistrer, éditer, manipuler, créer et lire des contenus audionumériques. -- Wikipédia} \textit{Ableton Live} associé au plugin \textit{MaxForLive}\footnote{MaxForLive est un plugin permettant l'intégration du logiciel Max/MSP à la station audionumérique Ableton Live. Voir plus loin pour plus de détails sur Max/MSP.}. Ableton Live va répartir le signal audio sur les systèmes WFS et HOA (\textit{Wave Field Synthesis} et \textit{High Order Ambisonics}\footnote{\textit{Wave Field Synthesis} et \textit{High Order Ambisonics} sont deux systèmes de diffusion de sons spatialisés basés sur l'utilisation d'un grand nombre d'enceintes.}) via la liaison MADI\footnote{MADI (Multichannel Audio Digital Interface) est une liaison audionumérique définissant un protocole capable d'embarquer 64 canaux audio simultanément}. Le plugin MaxForLive va s'occuper d'envoyer des messages OSC\footnote{Open Sound Control. Protocole de communiaction entre ordinateurs, synthéthiseurs et autres appareils. \textbf{Voir le chapitre} pour plus de détails.} \texttt{/boids/1}, \texttt{/boids/2} et \texttt{/boids/3} (directives de déclenchement d'effets sonores), via UDP, aux systèmes WFS et HOA. Le schéma de branchement complet est consultable en annexe \ref{sec:schemaInstallationFluoresceComplet} page~\pageref{sec:schemaInstallationFluoresceComplet}.
 \end{center}
 
-Cette pièce met bien en place des moyens audiovisuels (un violoncelle, des ordinateurs, et deux systèmes de diffusion sonore…) pour traduire une expérience musicale; ici l'expérience est purement sonore, il n'y a pas de dimension multisensorielle. La pièce \textit{Fluoresce} est un type de musique appelée "musique mixte", c'est à dire qui mélange instruments traditionnels et informatique.
+Cette pièce met bien en place des moyens audiovisuels (un violoncelle, des ordinateurs, et deux systèmes de diffusion sonore…) pour traduire une expérience musicale; ici l'expérience est purement sonore, il n'y a pas de dimension multisensorielle. La pièce \textit{Fluoresce} est un type de musique appelée "musique mixte", c'est à dire qui mélange instruments traditionnels et Informatique.
 
-Sur le schéma, un ordinateur sur scène envoie le message OSC \texttt{/cue/time} au \textit{Client computer}. Le message \texttt{/cue/time} transmet un référentiel temporel permettant la synchronisation entre le jeu du violoncelliste et le \textit{Client computer}. 
+Sur le schéma, l'ordinateur sur scène envoie le message OSC \texttt{/cue/time} au \textit{Client computer}. Le message \texttt{/cue/time} transmet un référentiel temporel permettant la synchronisation entre le jeu du violoncelliste et le \textit{Client computer}. 
 Dans le cas de musique mixte, la question de la synchronisation humain/machine et du suivi de partition est centrale (voir la section suivante). 
-En effet, même si une pièce de musique multimédia peut se détacher de toutes notions de métrique, de mélodie et d'harmonie, elle ne peut se détacher de la temporalité des évènements qui la composent et qui nécessite un interaction synchrone entre les acteurs de la pièce. 
+En effet, même si une pièce de musique multimédia peut se détacher de toutes notions de métrique, de mélodie et d'harmonie, elle admet tout de même un ordonnancement temporel des éléments la composant.
+D'ailleurs, sur les partitions du XXème siècle, Jean-Yves Bosseur indique que la notation agit comme le \og déclencheur d'une chaîne d'actions et de réactions sonores \fg (\cite[121]{bosseur2005}), illustrant bien l'impératif de temporisation et de synchronisation inhérent à la musique multimédia.
 
+Pour finir, la présence d'un schéma de branchement au sein de la partition de \textit{Fluoresce} démontre la nécessité d'augmentation de la portée traditionnelle, qui n'est pas capable de retransmettre à la fois le contenu et l'agencement d'une pièce musicale.  
 
+L'écoute et la description de la pièce \textit{Fluoresce} sont accessibles à l'url \url{http://www.ramagottfried.com/fluoresce.html}.
+
+\subsection{But de la notation pour la musique multimédia}
+\label{subsec:fonctionDeLaNotation}
+La notation musicale peut être distinguée en deux approches : un approche prescriptive et une approche descriptive \cite{battier2015}.
+
+La notation prescriptive a pour but de décrire \og comment la musique doit sonner \fg.
+Dans cette optique, la partition fait office de référence ou du moins de repère pour l'interprétation d'une pièce. 
+
+La notation descriptive tente de retranscrire \og comment la musique a sonné \fg.
+Ainsi, à des fins d'analyse, une pièce peut être caractérisée et fixée sur une partition.
+
+La musique multimédia hérite de la musique électroacoustique son caractère expérimental. Ainsi, la composition d'une telle musique s'effectue souvent à même la matière sonore, sans l'entremise de la partition.
+
+Aussi, quel est l'objectif de la notation pour la musique multimédia?
+
+De nombreuses pièces électroacoustiques n'ont été notées qu'après coup par les musiciens les produisant (exemple, les truc-muches…). Ainsi, dans le cas de la musique multimédia une approche descriptive de la notation serait à envisager.
+
+Cependant, comme dit précédemment, la partition reste l'outil privilégié du compositeur pour la communication de sa musique.
+
+Aussi, pour la musique multimédia, la préparation d'une pièce par un ensemble musical se fait souvent en collaboration avec le compositeur. La partition constitue alors le support de la discussion et se voit même être modifiée pour les besoins de l'exécution de la pièce. 
+
+Comme le dit Carmine E. Cella, chercheur et compositeur à l'IRCAM, en parlant de l'écriture musicale : \og le créateur doit s'efforcer de trouver un compromis notationnel entre sa pensée et la réalisation pratique de sa pièce \fg.
+
+L'annexe donne deux exemples de partitions représentant la même partie de la pièce \textit{Reflets de l'ombre} (C. E. Cella, 2013), montrant l'adaptation de la notation à des fins d'exécution.

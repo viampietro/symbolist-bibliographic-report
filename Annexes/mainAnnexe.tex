@@ -1,7 +1,7 @@
 % Pour faire une référence d'une annexe
 % (Annexe \ref{sec:nomsection} page~\pageref{sec:nomsection})
 
-\section{Histoire de la notation musicale : exemple de texte neumé}
+\section{Un peu d'histoire : exemple de texte neumé}
 \label{sec:exempleTexteNeume}
 \begin{figure}[!htbp]
 	\centering
@@ -14,7 +14,7 @@
 \end{figure}
 \clearpage
 
-\section{Histoire de la notation musicale : exemple de notation carrée}
+\section{Un peu d'histoire : exemple de notation carrée}
 \label{sec:exempleNotationCarree}
 \begin{figure}[H]
 	\centering
@@ -25,8 +25,36 @@
 	Source : 1499, Jean Highman, \textit{Missale Leodiense}, Paris - \textit{Les notes sont représentées en notation carrée toujours au-dessus du texte chanté.}
 	\label{fig:notationCarree}
 \end{figure}
+\clearpage
 
+\includepdf[
+	angle = 90,
+	addtolist={1, figure, {Schéma complet de branchement pour la pièce \textit{Fluoresce}, Rama Gottfried, 2012}, fig:schemaInstallationFluoresceComplet}, 
+	pagecommand = {
+		\section{Noter la musique multimédia : schéma complet de branchement pour la pièce \textit{Fluoresce}, Rama Gottfried, 2012}
+		\label{sec:schemaInstallationFluoresceComplet}
+	}]{Annexes/schemaInstallationFluoresceComplet.pdf}
 
+\section{Noter la musique multimédia : deux transcriptions de la pièce \textit{Reflets de l'ombre}, Carmine E. Cella, 2013}
+\label{sec:refletsDeLOmbre}
 
-\includepdf[angle = 90, pagecommand = {\section{Noter la musique multimédia : schéma complet de branchement pour la pièce \textit{Fluoresce}, Rama Gottfried, 2012}
-\label{sec:schemaInstallationFluoresceComplet}}]{Annexes/schemaInstallationFluoresceComplet.pdf}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio=true, width=\textwidth, angle = -90]{Annexes/i/refletsDeLOmbreFantaisie.jpg}
+	\caption{Extrait d'une première version de \textit{Reflets de l'ombre} par Carmine E. Cella}
+	\medskip
+	\small
+	\textit{Cette première version représente la pièce en termes de variations du timbre du son.
+	La musique y est notée de manière quasi morphologique, avec quelques ajouts de symboles de la gravure standard.}	
+	\label{fig:refletsDeLOmbreFantaisie}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio=true, width=\textwidth]{Annexes/i/refletsDeLOmbreReel.png}
+	\caption{Extrait d'une version éxecutée par un orchestre de \textit{Reflets de l'ombre} par Carmine E. Cella}
+	\medskip
+	\small
+	Cette version de la pièce, qui est destinée à l'orchestre exécutant, a été remaniée vis à vis de la version de la figure \ref{fig:refletsDeLOmbreFantaisie}. Cependant, les formes du son se retrouvent même dans cette transcription plus littérale. 	
+	\label{fig:refletsDeLOmbreReel}
+\end{figure}
