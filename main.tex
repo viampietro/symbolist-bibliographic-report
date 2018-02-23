@@ -25,7 +25,6 @@
 
 % loading glossary file
 \loadglsentries{Glossaire/glossaire.tex} 
-
 \makeglossaries
 
 % package for references and links 
@@ -33,6 +32,10 @@
 
 % package for insertion of pdf pages
 \usepackage{pdfpages}
+
+% package to change behavior of floats numbering
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
 
 % pour les images
 \usepackage{graphicx}
@@ -85,7 +88,7 @@
 \usepackage{listings} 
 \usepackage{listingsutf8}
 \lstloadlanguages{JAVA, SQL}
-\lstset{% affichage du code par défaut
+\lstset{ % affichage du code par défaut
     inputencoding=utf8/latin1,
     basicstyle=\footnotesize\sf,
     morecomment=[s]{/*}{*/},
@@ -163,16 +166,33 @@
 
 %%%%% CHAPITRE "DE LA NOTATION MUSICALE" %%%%%
 \chapter{De la notation musicale}
+\label{chap:deLaNotation}
+
 	\todo{Ajouter une intro pour le chapitre}	
 	
 	\section{Un peu d'histoire}
 	\label{sec:unPeuDHistoire}
 	\input{Notation/unPeuDHistoire.tex}
 	
-	\section{Noter la musique multimédia}
-	\label{sec:noterLaMusiqueMultimedia}
-	\input{Notation/noterLaMusiqueMultimedia.tex}	
+	\section{Noter la musique contemporaine}
+	\label{sec:noterLaMusiqueContemporaine}
+	\input{Notation/noterLaMusiqueContemporaine.tex}	
 
+%%%%% CHAPITRE "OUTILS INFORMATIQUES POUR LA NOTATION DE LA MUSIQUE"
+\chapter{Outils informatiques pour la notation de la Musique}
+\label{chap:outilsInfo}
+\rhead{\textit{OUTILS INFORMATIQUES}} % change title right of the header
+
+La présente partie dresse, d'en un premier temps, un état de l'art des logiciels et langages permettant de noter la Musique.
+De même, elle tend a montré l'insuffisance de telles ressources pour ce qui est de noter la musique contemporaine.
+Le chapitre se décline en trois parties : la section \ref{sec:outilsNotationSymbolique} présente les outils informatiques permettant d'écrire la Musique à l'aide de symboles, incluant ceux de la notation standard; la deuxième partie expose les moyens informatiques pour une notation morphologique de la Musique, c'est à dire, basée sur une représentation visuelle de l'onde sonore; la troisième partie s'intéresse aux outils évolués, ajoutant une dimension "interactive" à la portée, faisant d'eux de véritables environnements de création.   
+
+	\section{Outils pour une notation musicale symbolique}
+	\label{sec:outilsNotationSymbolique}
+	\input{OutilsInformatiques/outilsNotationSymbolique.tex}
+	
+		
+	
 %%%%% CONCLUSION %%%%%
 \chapter{Conclusion}
 \input{Paratextes/conclusion.tex}
@@ -193,6 +213,7 @@
 
 %%%%% ANNEXES %%%%%
 \lhead{} % remove the left part of the header (section name)
+\rhead{\textit{ANNEXES}} % set right header
 \appendix
 \romanchapter{Annexes}
 \input{Annexes/mainAnnexe.tex}
