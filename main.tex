@@ -1,4 +1,4 @@
-\documentclass[a4paper,oneside]{book}
+\documentclass[a4paper, oneside]{book}
 
 %% Language and font encodings
 \usepackage[frenchb]{babel}
@@ -12,6 +12,9 @@
 % creation de la commande circled, mot entoure d'un cercle
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{% <---- BEWARE
             \node[shape=circle,draw,inner sep=2pt, color=pumpkin] (char) {#1};}}
+
+% Using \hfuzz allows \hbox to be overfull to the given amount before a warning is raised
+\hfuzz = 5pt
 
 % quotes package
 \usepackage[autostyle, maxlevel = 2]{csquotes}
@@ -62,7 +65,8 @@
 \newcommand{\xmark}{\ding{55}}
 
 %% package for landscape page view
-\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{rotating}
 
 %% pour dessiner des graphiques et des schemas
 \usepackage{tikz}
@@ -144,6 +148,7 @@
 \usepackage{fancyhdr}
 \setlength{\headheight}{15.2pt}
 \pagestyle{fancy}
+\rhead{} % empty right header
 
 \begin{document}
 
@@ -156,45 +161,44 @@
 
 %%%%% SOMMAIRE %%%%%%
 \tableofcontents
+\clearpage
 
 %%%%% INTRODUCTION %%%%%
-\chapter{Introduction}
-	\input{Paratextes/introduction.tex}
+\thispagestyle{empty}
+\section{Introduction}
+\input{Paratextes/introduction.tex}
 
 \stepcounter{page}
 \pagenumbering{arabic}
 
-%%%%% CHAPITRE "DE LA NOTATION MUSICALE" %%%%%
-\chapter{De la notation musicale}
-\label{chap:deLaNotation}
+%%%%% SECTION "UN PEU D'HISTOIRE" %%%%%
+\section{Un peu d'histoire}
+\label{sec:unPeuDHistoire}
+\input{Notation/unPeuDHistoire.tex}
 
-	\todo{Ajouter une intro pour le chapitre}	
+%%%%% SECTION "OUTILS PRODUCTION MUSICALE" %%%%%	
+\section{Outils Informatiques pour la production musicale}
+\label{sec:outilsInfosProdMus}
+\input{OutilsInformatiques/outilsInfosProdMus.tex}	
+
+%%%%% SECTION "OUTILS NOTATION SYMBOLIQUE" %%%%%
+\section{Outils Informatiques pour une notation symbolique de la Musique}
+\label{sec:outilsNotationSymbolique}
+\input{OutilsInformatiques/outilsNotationSymbolique.tex}
 	
-	\section{Un peu d'histoire}
-	\label{sec:unPeuDHistoire}
-	\input{Notation/unPeuDHistoire.tex}
+%%%%% SECTION "OUTILS OEUVRES ELECTRO AC., MIXTES ou MULTI" %%%%%	
+\section[Notation des œuvres électroacoustiques, mixtes ou multimédias]{Vers une approche intégrée pour la notation des œuvres électroacoustiques, mixtes ou multimédias}
+\label{sec:outilsNotationElectroMixteMulti}
+\input{OutilsInformatiques/outilsNotationElectroMixteMulti.tex}
 	
-	\section{Noter la musique contemporaine}
-	\label{sec:noterLaMusiqueContemporaine}
-	\input{Notation/noterLaMusiqueContemporaine.tex}	
-
-%%%%% CHAPITRE "OUTILS INFORMATIQUES POUR LA NOTATION DE LA MUSIQUE"
-\chapter{Outils informatiques pour la notation de la Musique}
-\label{chap:outilsInfo}
-\rhead{\textit{OUTILS INFORMATIQUES}} % change title right of the header
-
-La présente partie dresse, d'en un premier temps, un état de l'art des logiciels et langages permettant de noter la Musique.
-De même, elle tend a montré l'insuffisance de telles ressources pour ce qui est de noter la musique contemporaine.
-Le chapitre se décline en trois parties : la section \ref{sec:outilsNotationSymbolique} présente les outils informatiques permettant d'écrire la Musique à l'aide de symboles, incluant ceux de la notation standard; la deuxième partie expose les moyens informatiques pour une notation morphologique de la Musique, c'est à dire, basée sur une représentation visuelle de l'onde sonore; la troisième partie s'intéresse aux outils évolués, ajoutant une dimension "interactive" à la portée, faisant d'eux de véritables environnements de création.   
-
-	\section{Outils pour une notation musicale symbolique}
-	\label{sec:outilsNotationSymbolique}
-	\input{OutilsInformatiques/outilsNotationSymbolique.tex}
-	
-		
+%	\section{Outils pour une notation morphologique de la Musique}
+%	\label{sec:outilsNotationMorphologique}
+%	\input{OutilsInformatiques/outilsNotationMorphologique.tex}
 	
 %%%%% CONCLUSION %%%%%
-\chapter{Conclusion}
+\clearpage
+\thispagestyle{empty}
+\section{Conclusion}
 \input{Paratextes/conclusion.tex}
 
 \stepcounter{page}
