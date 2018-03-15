@@ -8,6 +8,7 @@
 
 \usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 % creation de la commande circled, mot entoure d'un cercle
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{% <---- BEWARE
@@ -24,7 +25,8 @@
 \addbibresource{references.bib}            
 
 % glossary package
-\usepackage[toc]{glossaries}
+\usepackage{nameref}
+\usepackage[toc, numberedsection=nameref]{glossaries}
 
 % loading glossary file
 \loadglsentries{Glossaire/glossaire.tex} 
@@ -128,8 +130,6 @@
 \newtheorem{example}{Example}
 
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{nameref}
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]{\flushleft\Huge\itshape}{\quad}{0.5em}{}[]
@@ -164,20 +164,21 @@
 \clearpage
 
 %%%%% INTRODUCTION %%%%%
-\thispagestyle{empty}
-\section{Introduction}
+\chapter{Introduction}
 \input{Paratextes/introduction.tex}
 
 \stepcounter{page}
 \pagenumbering{arabic}
+
+\chapter{Étude Bibliographique}
 
 %%%%% SECTION "UN PEU D'HISTOIRE" %%%%%
 \section{Un peu d'histoire}
 \label{sec:unPeuDHistoire}
 \input{Notation/unPeuDHistoire.tex}
 
-%%%%% SECTION "OUTILS PRODUCTION MUSICALE" %%%%%	
-\section{Outils Informatiques pour la production musicale}
+%%%%% SECTION "OUTILS CREATION MUSICALE" %%%%%	
+\section{Outils Informatiques pour la création musicale}
 \label{sec:outilsInfosProdMus}
 \input{OutilsInformatiques/outilsInfosProdMus.tex}	
 
@@ -197,8 +198,7 @@
 	
 %%%%% CONCLUSION %%%%%
 \clearpage
-\thispagestyle{empty}
-\section{Conclusion}
+\chapter{Conclusion}
 \input{Paratextes/conclusion.tex}
 
 \stepcounter{page}
